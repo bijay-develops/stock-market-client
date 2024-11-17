@@ -12,7 +12,7 @@ const Stocks = ({ addToWatchlist }) => {
 
 	useEffect(() => {
 		// Fetch stock data from the backend
-		fetch("http://localhost:5000/api/stocks")
+		fetch("https://stock-market-portfolio-z1yb.onrender.com/api/stocks")
 			.then((res) => res.json())
 			.then((data) => setStocks(data))
 			.catch((error) => console.error("Error fetching stocks:", error));
@@ -76,7 +76,7 @@ function App() {
 
 	const addToWatchlist = (stock) => {
 		// Add stock to watchlist
-		fetch("http://localhost:5000/api/watchlist", {
+		fetch("https://stock-market-portfolio-z1yb.onrender.com/api/watchlist", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
