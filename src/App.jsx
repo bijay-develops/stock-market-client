@@ -10,6 +10,7 @@ import "./App.css";
 const Stocks = ({ addToWatchlist }) => {
 	const [stocks, setStocks] = useState([]);
 
+//data retrive
 	useEffect(() => {
 		// Fetch stock data from the backend
 		fetch("https://stock-market-portfolio-z1yb.onrender.com/api/stocks")
@@ -19,6 +20,7 @@ const Stocks = ({ addToWatchlist }) => {
 	}, []);
 	console.log(setStocks, "Stocksdata");
 
+//Random color selection for the lists
 	const getRandomColor = () => {
 		const colors = ["#FF0000", "#00FF00"]; // Red and Green
 		return colors[Math.floor(Math.random() * colors.length)];
@@ -46,6 +48,8 @@ const Stocks = ({ addToWatchlist }) => {
 	);
 };
 
+
+//for watchlist 
 const Watchlist = ({ watchlist }) => {
 	const getRandomColor = () => {
 		const colors = ["#FF0000", "#00FF00"]; // Red and Green
@@ -71,6 +75,7 @@ const Watchlist = ({ watchlist }) => {
 	);
 };
 
+
 function App() {
 	const [watchlist, setWatchlist] = useState([]);
 
@@ -93,6 +98,8 @@ function App() {
 				console.error("Error adding to watchlist:", error)
 			);
 	};
+
+	
 
 	return (
 		<Router>
